@@ -128,21 +128,23 @@ print(rout.shape)
 # Plot the outputs
 
 # Input
-plt.figure("Input image")
-plt.imshow(input_image)
+# plt.figure("Input image")
+# plt.imshow(input_image)
 
 # Decode the output
 result=unscramble(np.uint8(input_image*255.0),sout,rout,4)
+image_pil = Image.fromarray(result)
+image_pil.save("./result.jpg")
 
 # Output
-plt.figure("Output image")
-plt.imshow(result)
+# plt.figure("Output image")
+# plt.imshow(result)
 
 
 # Original image
 img=np.array(Image.open('data/angrybird.jpeg'))
-plt.figure("Original Image")
-plt.imshow(img)
+# plt.figure("Original Image")
+# plt.imshow(img)
 
 plt.show()
 
